@@ -15,8 +15,8 @@ export class FeaturesService {
     return newFeature.save();
   }
 
-  findAll() {
-    return `This action returns all features`;
+  async findAll() {
+    return this.featureModel.find();
   }
 
   findOne(id: number) {
