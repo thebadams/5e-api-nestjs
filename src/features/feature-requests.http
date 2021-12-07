@@ -34,7 +34,7 @@ GET http://localhost:3000/features/61afafb80e73d989360465a6
 
 GET http://localhost:3000/features/61afafb80e73d989360465a5
 
-### Update A Feature By ID
+### Update A Feature Description By ID
 
 PATCH http://localhost:3000/features/61afafb80e73d989360465a6
 Content-Type: application/json
@@ -43,10 +43,14 @@ Content-Type: application/json
 	"description": "SPELL CASTING!!!"
 }
 
+### Update Feature Name By ID
 PATCH http://localhost:3000/features/61afafb80e73d989360465a6
 Content-Type: application/json
 
 {
 	"name": "SPELL CASTING!!!"
 }
+
+### DELETE a feature by ID
+DELETE http://localhost:3000/features/61afafb80e73d989360465a6
 
