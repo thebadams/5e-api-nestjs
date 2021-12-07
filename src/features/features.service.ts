@@ -27,8 +27,10 @@ export class FeaturesService {
     return feature;
   }
 
-  update(id: number, updateFeatureDto: UpdateFeatureDto) {
-    return `This action updates a #${id} feature`;
+  async update(id: string, attrs: UpdateFeatureDto) {
+    return this.featureModel.findByIdAndUpdate(id, attrs, {
+      new: true,
+    });
   }
 
   remove(id: number) {

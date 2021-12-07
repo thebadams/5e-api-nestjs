@@ -34,3 +34,19 @@ GET http://localhost:3000/features/61afafb80e73d989360465a6
 
 GET http://localhost:3000/features/61afafb80e73d989360465a5
 
+### Update A Feature By ID
+
+PATCH http://localhost:3000/features/61afafb80e73d989360465a6
+Content-Type: application/json
+
+{
+	"description": "SPELL CASTING!!!"
+}
+
+PATCH http://localhost:3000/features/61afafb80e73d989360465a6
+Content-Type: application/json
+
+{
+	"name": "SPELL CASTING!!!"
+}
+

@@ -31,8 +31,8 @@ export class FeaturesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateFeatureDto: UpdateFeatureDto) {
-    return this.featuresService.update(+id, updateFeatureDto);
+  update(@Param('id') id: string, @Body() body: UpdateFeatureDto) {
+    return this.featuresService.update(id, body);
   }
 
   @Delete(':id')
