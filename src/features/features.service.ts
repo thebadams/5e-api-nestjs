@@ -10,8 +10,9 @@ export class FeaturesService {
   constructor(
     @InjectModel(Feature.name) private featureModel: Model<FeatureDocument>,
   ) {}
-  create(feature: CreateFeatureDto) {
-    return 'This action adds a new feature';
+  async create(feature: CreateFeatureDto): Promise<Feature> {
+    const newFeature = new this.featureModel(feature);
+    return newFeature.save();
   }
 
   findAll() {
