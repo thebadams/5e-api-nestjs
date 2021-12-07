@@ -23,3 +23,14 @@ Content-Type: application/json
 	"name": "Spell Casting"
 }
 
+### FIND all features 
+GET http://localhost:3000/features/
+
+### FIND Feature by ID
+
+GET http://localhost:3000/features/61afafb80e73d989360465a6
+
+### FIND Feature By ID that doesn't exist
+
+GET http://localhost:3000/features/61afafb80e73d989360465a5
+

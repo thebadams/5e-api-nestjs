@@ -26,8 +26,8 @@ export class FeaturesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.featuresService.findOne(+id);
+  findById(@Param('id') id: string) {
+    return this.featuresService.findById(id);
   }
 
   @Patch(':id')

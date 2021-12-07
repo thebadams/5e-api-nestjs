@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Feature, FeatureDocument } from './schemas/feature.schema';
@@ -19,8 +19,12 @@ export class FeaturesService {
     return this.featureModel.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} feature`;
+  async findById(id: string) {
+    const feature = await this.featureModel.findById(id);
+    if (!feature) {
+      throw new NotFoundException('No Feature With That ID Found');
+    }
+    return feature;
   }
 
   update(id: number, updateFeatureDto: UpdateFeatureDto) {
