@@ -1,0 +1,25 @@
+### CREATE New Feature
+POST http://localhost:3000/features/
+Content-Type: application/json
+
+{
+	"name": "Spell Casting",
+	"description": "The Ability To Cast Spells"
+}
+
+### CREATE Feature With Missing Name
+POST http://localhost:3000/features/
+Content-Type: application/json
+
+{
+	"description": "The Ability To Cast Spells"
+}
+
+### CREATE Feature With Missing Description
+POST http://localhost:3000/features/
+Content-Type: application/json
+
+{
+	"name": "Spell Casting"
+}
+
