@@ -37,6 +37,6 @@ export class FeaturesController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.featuresService.remove(+id);
+    return this.featuresService.remove(id);
   }
 }

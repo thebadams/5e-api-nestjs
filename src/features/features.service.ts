@@ -33,7 +33,7 @@ export class FeaturesService {
     });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} feature`;
+  async remove(id: string) {
+    return this.featureModel.findByIdAndDelete(id);
   }
 }
