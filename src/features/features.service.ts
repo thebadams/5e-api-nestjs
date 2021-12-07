@@ -11,8 +11,7 @@ export class FeaturesService {
     @InjectModel(Feature.name) private featureModel: Model<FeatureDocument>,
   ) {}
   async create(feature: CreateFeatureDto): Promise<Feature> {
-    const newFeature = new this.featureModel(feature);
-    return newFeature.save();
+    return this.featureModel.create(feature);
   }
 
   async findAll() {
