@@ -1,10 +1,16 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Feature, FeatureDocument } from './schemas/feature.schema';
 import { CreateFeatureDto } from './dto/create-feature.dto';
 import { UpdateFeatureDto } from './dto/update-feature.dto';
 
 @Injectable()
 export class FeaturesService {
-  create(createFeatureDto: CreateFeatureDto) {
+  constructor(
+    @InjectModel(Feature.name) private featureModel: Model<FeatureDocument>,
+  ) {}
+  create(feature: CreateFeatureDto) {
     return 'This action adds a new feature';
   }
 
